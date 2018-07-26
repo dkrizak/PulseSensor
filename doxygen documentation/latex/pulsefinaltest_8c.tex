@@ -1,0 +1,320 @@
+\hypertarget{pulsefinaltest_8c}{}\section{C\+:/\+Users/\+John/\+Desktop/pulsefinaltest/pulsefinaltest/pulsefinaltest.c File Reference}
+\label{pulsefinaltest_8c}\index{C\+:/\+Users/\+John/\+Desktop/pulsefinaltest/pulsefinaltest/pulsefinaltest.\+c@{C\+:/\+Users/\+John/\+Desktop/pulsefinaltest/pulsefinaltest/pulsefinaltest.\+c}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\\*
+{\ttfamily \#include $<$util/delay.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}lcd.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pulsefinaltest_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}~7372800\+UL
+\item 
+\#define \hyperlink{pulsefinaltest_8c_a2909a95b18063934f4eac3568e26406b}{F\+\_\+\+P\+WM}~1000\+U			/$\ast$ P\+W\+M freq $\sim$ 1k\+Hz    $\ast$/
+\item 
+\#define \hyperlink{pulsefinaltest_8c_a0240ac851181b84ac374872dc5434ee4}{N}~8
+\item 
+\#define \hyperlink{pulsefinaltest_8c_afc0eef637f1016e8786e45e106a4881e}{T\+OP}~(((\hyperlink{pulsefinaltest_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}/\hyperlink{pulsefinaltest_8c_a2909a95b18063934f4eac3568e26406b}{F\+\_\+\+P\+WM})/\hyperlink{pulsefinaltest_8c_a0240ac851181b84ac374872dc5434ee4}{N})-\/1)
+\item 
+\#define \hyperlink{pulsefinaltest_8c_a050c85f0aa68f176b51c7c6e4945aa53}{C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+D\+EF}~\hyperlink{pulsefinaltest_8c_afc0eef637f1016e8786e45e106a4881e}{T\+OP}/3
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{pulsefinaltest_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}{adc\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em init adc \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_a7c3d687942e3acba4e53cac61d9e71ea}{adc\+\_\+read} (uint8\+\_\+t ch)
+\begin{DoxyCompactList}\small\item\em read adc value \end{DoxyCompactList}\item 
+int \hyperlink{pulsefinaltest_8c_a6650398d0d31aea075ca7ca8eff83774}{debounce} (void)
+\begin{DoxyCompactList}\small\item\em debounce check function \end{DoxyCompactList}\item 
+int \hyperlink{pulsefinaltest_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\item 
+\hyperlink{pulsefinaltest_8c_ada481aa6f700b24e2f7cb2bbb6a0227a}{I\+SR} (T\+I\+M\+E\+R0\+\_\+\+C\+O\+M\+P\+\_\+vect)
+\begin{DoxyCompactList}\small\item\em 25ms timer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_a83e6ba41bb38f5382e13147d9789f7c9}{puls}
+\begin{DoxyCompactList}\small\item\em adc pulse value \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_a49b5eabc8894906818f9f606cd67105e}{beat} =0
+\begin{DoxyCompactList}\small\item\em heartbeat counter \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_a15c39953b2326c99366f82dbbea0f8db}{beatp} =0
+\begin{DoxyCompactList}\small\item\em heartbeat average \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_a9f1112c28ce8fc2381f4635206664661}{beatsum} =0
+\begin{DoxyCompactList}\small\item\em heartbeat average in 5 sec interval \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_ab4e662194d9dcfde258e389307eea268}{avg} =550
+\begin{DoxyCompactList}\small\item\em signal amplitude average \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_ac66b569507cc273bbf83ce5dd5f70e84}{max} =0
+\begin{DoxyCompactList}\small\item\em max amplitude \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_adb9fb614a1b429c765c22f4f2666efec}{amp} =0
+\begin{DoxyCompactList}\small\item\em average amplitude \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_a1a1f4624f66ab0b2eb0b98316514c369}{min} =900
+\begin{DoxyCompactList}\small\item\em min amplitude \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{pulsefinaltest_8c_a2b5b7882f74d31b297a82b43f331dbf1}{i} =0
+\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_aa5c82199da68dcbb954f8a8ff651293d}{j} =0
+\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_ab3539ae3820541b70d17c66cfc5a0e3f}{z} =0
+\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_aa67b0739c7b48c142a1e93acc6804009}{menu} =0
+\begin{DoxyCompactList}\small\item\em type of menu \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_a56d5d17c309cbe57628e4da5ed97ff01}{sec} =0
+\begin{DoxyCompactList}\small\item\em second counter \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_aff31312fb16705aa73c53b945a1a6b30}{flag} =0
+\begin{DoxyCompactList}\small\item\em heartbeat flag \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_a052c6d6c4fd9b6fe5b2c4330b1376e57}{cnt} =40
+\begin{DoxyCompactList}\small\item\em 1 second counter 40 $\ast$ 25ms = 1 sec \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_a258408d6d5d13a24bfa5211d81ce1682}{period} =200
+\begin{DoxyCompactList}\small\item\em 5 sec period \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_a5a648f5ec00c526b0dfa2df7a272c6c0}{n} =1
+\begin{DoxyCompactList}\small\item\em period counter \end{DoxyCompactList}\item 
+char \hyperlink{pulsefinaltest_8c_a92dfe6e9243e862063a0c3869f784557}{buffer} \mbox{[}10\mbox{]}
+\item 
+unsigned char \hyperlink{pulsefinaltest_8c_ad743e6af7544d81d8e0135c1947c13d1}{srce} \mbox{[}8\mbox{]} =\{0x00, 0x0a, 0x15, 0x11, 0x11, 0x0a, 0x04, 0x00\}
+\begin{DoxyCompactList}\small\item\em heart sign string \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{pulsefinaltest_8c_a9932ead8a6c5cfd3096f05af88730c66}{milisek} = 0
+\begin{DoxyCompactList}\small\item\em ms counter for time display \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_a698eb33668e1a2ec731bce5c7a48e164}{sek} = 0
+\begin{DoxyCompactList}\small\item\em second counter for time display \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{pulsefinaltest_8c_a204f616a39c11ba10b52d9bfdc7583bf}{minuta} = 1
+\begin{DoxyCompactList}\small\item\em detects 1 min stop counting \end{DoxyCompactList}\item 
+int \hyperlink{pulsefinaltest_8c_a593ebee3bd27bd12992aeb44d6c67f7f}{Pressed} = 0
+\begin{DoxyCompactList}\small\item\em debounce varible \end{DoxyCompactList}\item 
+int \hyperlink{pulsefinaltest_8c_a56da277651c8256aa84f1f9752257b56}{Pressed\+\_\+\+Confidence\+\_\+\+Level} = 0
+\begin{DoxyCompactList}\small\item\em Measure button press cofidence. \end{DoxyCompactList}\item 
+int \hyperlink{pulsefinaltest_8c_add3624bbac0149100111436b18ab238d}{Released\+\_\+\+Confidence\+\_\+\+Level} = 0
+\begin{DoxyCompactList}\small\item\em Measure button release confidence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+D\+EF@{C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+D\+EF}}
+\index{C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+D\+EF@{C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+D\+EF}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+D\+EF}{CONTRAST_DEF}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+N\+T\+R\+A\+S\+T\+\_\+\+D\+EF~{\bf T\+OP}/3}\hypertarget{pulsefinaltest_8c_a050c85f0aa68f176b51c7c6e4945aa53}{}\label{pulsefinaltest_8c_a050c85f0aa68f176b51c7c6e4945aa53}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!F\+\_\+\+C\+PU@{F\+\_\+\+C\+PU}}
+\index{F\+\_\+\+C\+PU@{F\+\_\+\+C\+PU}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{F\+\_\+\+C\+PU}{F_CPU}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+\_\+\+C\+PU~7372800\+UL}\hypertarget{pulsefinaltest_8c_a43bafb28b29491ec7f871319b5a3b2f8}{}\label{pulsefinaltest_8c_a43bafb28b29491ec7f871319b5a3b2f8}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!F\+\_\+\+P\+WM@{F\+\_\+\+P\+WM}}
+\index{F\+\_\+\+P\+WM@{F\+\_\+\+P\+WM}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{F\+\_\+\+P\+WM}{F_PWM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+\_\+\+P\+WM~1000\+U			/$\ast$ P\+W\+M freq $\sim$ 1k\+Hz    $\ast$/}\hypertarget{pulsefinaltest_8c_a2909a95b18063934f4eac3568e26406b}{}\label{pulsefinaltest_8c_a2909a95b18063934f4eac3568e26406b}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!N@{N}}
+\index{N@{N}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{N}{N}}]{\setlength{\rightskip}{0pt plus 5cm}\#define N~8}\hypertarget{pulsefinaltest_8c_a0240ac851181b84ac374872dc5434ee4}{}\label{pulsefinaltest_8c_a0240ac851181b84ac374872dc5434ee4}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!T\+OP@{T\+OP}}
+\index{T\+OP@{T\+OP}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{T\+OP}{TOP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+OP~((({\bf F\+\_\+\+C\+PU}/{\bf F\+\_\+\+P\+WM})/{\bf N})-\/1)}\hypertarget{pulsefinaltest_8c_afc0eef637f1016e8786e45e106a4881e}{}\label{pulsefinaltest_8c_afc0eef637f1016e8786e45e106a4881e}
+
+
+\subsection{Function Documentation}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!adc\+\_\+init@{adc\+\_\+init}}
+\index{adc\+\_\+init@{adc\+\_\+init}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{adc\+\_\+init()}{adc_init()}}]{\setlength{\rightskip}{0pt plus 5cm}void adc\+\_\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{pulsefinaltest_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}{}\label{pulsefinaltest_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}
+
+
+init adc 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!adc\+\_\+read@{adc\+\_\+read}}
+\index{adc\+\_\+read@{adc\+\_\+read}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{adc\+\_\+read(uint8\+\_\+t ch)}{adc_read(uint8_t ch)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t adc\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{ch}
+\end{DoxyParamCaption}
+)}\hypertarget{pulsefinaltest_8c_a7c3d687942e3acba4e53cac61d9e71ea}{}\label{pulsefinaltest_8c_a7c3d687942e3acba4e53cac61d9e71ea}
+
+
+read adc value 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!debounce@{debounce}}
+\index{debounce@{debounce}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{debounce(void)}{debounce(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int debounce (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{pulsefinaltest_8c_a6650398d0d31aea075ca7ca8eff83774}{}\label{pulsefinaltest_8c_a6650398d0d31aea075ca7ca8eff83774}
+
+
+debounce check function 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!I\+SR@{I\+SR}}
+\index{I\+SR@{I\+SR}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{I\+S\+R(\+T\+I\+M\+E\+R0\+\_\+\+C\+O\+M\+P\+\_\+vect)}{ISR(TIMER0_COMP_vect)}}]{\setlength{\rightskip}{0pt plus 5cm}I\+SR (
+\begin{DoxyParamCaption}
+\item[{T\+I\+M\+E\+R0\+\_\+\+C\+O\+M\+P\+\_\+vect}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{pulsefinaltest_8c_ada481aa6f700b24e2f7cb2bbb6a0227a}{}\label{pulsefinaltest_8c_ada481aa6f700b24e2f7cb2bbb6a0227a}
+
+
+25ms timer 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!main@{main}}
+\index{main@{main}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{pulsefinaltest_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\label{pulsefinaltest_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+\subsection{Variable Documentation}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!amp@{amp}}
+\index{amp@{amp}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{amp}{amp}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t amp =0}\hypertarget{pulsefinaltest_8c_adb9fb614a1b429c765c22f4f2666efec}{}\label{pulsefinaltest_8c_adb9fb614a1b429c765c22f4f2666efec}
+
+
+average amplitude 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!avg@{avg}}
+\index{avg@{avg}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{avg}{avg}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t avg =550}\hypertarget{pulsefinaltest_8c_ab4e662194d9dcfde258e389307eea268}{}\label{pulsefinaltest_8c_ab4e662194d9dcfde258e389307eea268}
+
+
+signal amplitude average 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!beat@{beat}}
+\index{beat@{beat}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{beat}{beat}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t beat =0}\hypertarget{pulsefinaltest_8c_a49b5eabc8894906818f9f606cd67105e}{}\label{pulsefinaltest_8c_a49b5eabc8894906818f9f606cd67105e}
+
+
+heartbeat counter 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!beatp@{beatp}}
+\index{beatp@{beatp}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{beatp}{beatp}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t beatp =0}\hypertarget{pulsefinaltest_8c_a15c39953b2326c99366f82dbbea0f8db}{}\label{pulsefinaltest_8c_a15c39953b2326c99366f82dbbea0f8db}
+
+
+heartbeat average 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!beatsum@{beatsum}}
+\index{beatsum@{beatsum}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{beatsum}{beatsum}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t beatsum =0}\hypertarget{pulsefinaltest_8c_a9f1112c28ce8fc2381f4635206664661}{}\label{pulsefinaltest_8c_a9f1112c28ce8fc2381f4635206664661}
+
+
+heartbeat average in 5 sec interval 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!buffer@{buffer}}
+\index{buffer@{buffer}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{buffer}{buffer}}]{\setlength{\rightskip}{0pt plus 5cm}char buffer\mbox{[}10\mbox{]}}\hypertarget{pulsefinaltest_8c_a92dfe6e9243e862063a0c3869f784557}{}\label{pulsefinaltest_8c_a92dfe6e9243e862063a0c3869f784557}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!cnt@{cnt}}
+\index{cnt@{cnt}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{cnt}{cnt}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t cnt =40}\hypertarget{pulsefinaltest_8c_a052c6d6c4fd9b6fe5b2c4330b1376e57}{}\label{pulsefinaltest_8c_a052c6d6c4fd9b6fe5b2c4330b1376e57}
+
+
+1 second counter 40 $\ast$ 25ms = 1 sec 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!flag@{flag}}
+\index{flag@{flag}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{flag}{flag}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t flag =0}\hypertarget{pulsefinaltest_8c_aff31312fb16705aa73c53b945a1a6b30}{}\label{pulsefinaltest_8c_aff31312fb16705aa73c53b945a1a6b30}
+
+
+heartbeat flag 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!i@{i}}
+\index{i@{i}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{i}{i}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t i =0}\hypertarget{pulsefinaltest_8c_a2b5b7882f74d31b297a82b43f331dbf1}{}\label{pulsefinaltest_8c_a2b5b7882f74d31b297a82b43f331dbf1}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!j@{j}}
+\index{j@{j}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{j}{j}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t j =0}\hypertarget{pulsefinaltest_8c_aa5c82199da68dcbb954f8a8ff651293d}{}\label{pulsefinaltest_8c_aa5c82199da68dcbb954f8a8ff651293d}
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!max@{max}}
+\index{max@{max}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{max}{max}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t max =0}\hypertarget{pulsefinaltest_8c_ac66b569507cc273bbf83ce5dd5f70e84}{}\label{pulsefinaltest_8c_ac66b569507cc273bbf83ce5dd5f70e84}
+
+
+max amplitude 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!menu@{menu}}
+\index{menu@{menu}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{menu}{menu}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t menu =0}\hypertarget{pulsefinaltest_8c_aa67b0739c7b48c142a1e93acc6804009}{}\label{pulsefinaltest_8c_aa67b0739c7b48c142a1e93acc6804009}
+
+
+type of menu 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!milisek@{milisek}}
+\index{milisek@{milisek}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{milisek}{milisek}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t milisek = 0}\hypertarget{pulsefinaltest_8c_a9932ead8a6c5cfd3096f05af88730c66}{}\label{pulsefinaltest_8c_a9932ead8a6c5cfd3096f05af88730c66}
+
+
+ms counter for time display 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!min@{min}}
+\index{min@{min}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{min}{min}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t min =900}\hypertarget{pulsefinaltest_8c_a1a1f4624f66ab0b2eb0b98316514c369}{}\label{pulsefinaltest_8c_a1a1f4624f66ab0b2eb0b98316514c369}
+
+
+min amplitude 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!minuta@{minuta}}
+\index{minuta@{minuta}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{minuta}{minuta}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t minuta = 1}\hypertarget{pulsefinaltest_8c_a204f616a39c11ba10b52d9bfdc7583bf}{}\label{pulsefinaltest_8c_a204f616a39c11ba10b52d9bfdc7583bf}
+
+
+detects 1 min stop counting 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!n@{n}}
+\index{n@{n}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{n}{n}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t n =1}\hypertarget{pulsefinaltest_8c_a5a648f5ec00c526b0dfa2df7a272c6c0}{}\label{pulsefinaltest_8c_a5a648f5ec00c526b0dfa2df7a272c6c0}
+
+
+period counter 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!period@{period}}
+\index{period@{period}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{period}{period}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t period =200}\hypertarget{pulsefinaltest_8c_a258408d6d5d13a24bfa5211d81ce1682}{}\label{pulsefinaltest_8c_a258408d6d5d13a24bfa5211d81ce1682}
+
+
+5 sec period 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!Pressed@{Pressed}}
+\index{Pressed@{Pressed}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{Pressed}{Pressed}}]{\setlength{\rightskip}{0pt plus 5cm}int Pressed = 0}\hypertarget{pulsefinaltest_8c_a593ebee3bd27bd12992aeb44d6c67f7f}{}\label{pulsefinaltest_8c_a593ebee3bd27bd12992aeb44d6c67f7f}
+
+
+debounce varible 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!Pressed\+\_\+\+Confidence\+\_\+\+Level@{Pressed\+\_\+\+Confidence\+\_\+\+Level}}
+\index{Pressed\+\_\+\+Confidence\+\_\+\+Level@{Pressed\+\_\+\+Confidence\+\_\+\+Level}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{Pressed\+\_\+\+Confidence\+\_\+\+Level}{Pressed_Confidence_Level}}]{\setlength{\rightskip}{0pt plus 5cm}int Pressed\+\_\+\+Confidence\+\_\+\+Level = 0}\hypertarget{pulsefinaltest_8c_a56da277651c8256aa84f1f9752257b56}{}\label{pulsefinaltest_8c_a56da277651c8256aa84f1f9752257b56}
+
+
+Measure button press cofidence. 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!puls@{puls}}
+\index{puls@{puls}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{puls}{puls}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t puls}\hypertarget{pulsefinaltest_8c_a83e6ba41bb38f5382e13147d9789f7c9}{}\label{pulsefinaltest_8c_a83e6ba41bb38f5382e13147d9789f7c9}
+
+
+adc pulse value 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!Released\+\_\+\+Confidence\+\_\+\+Level@{Released\+\_\+\+Confidence\+\_\+\+Level}}
+\index{Released\+\_\+\+Confidence\+\_\+\+Level@{Released\+\_\+\+Confidence\+\_\+\+Level}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{Released\+\_\+\+Confidence\+\_\+\+Level}{Released_Confidence_Level}}]{\setlength{\rightskip}{0pt plus 5cm}int Released\+\_\+\+Confidence\+\_\+\+Level = 0}\hypertarget{pulsefinaltest_8c_add3624bbac0149100111436b18ab238d}{}\label{pulsefinaltest_8c_add3624bbac0149100111436b18ab238d}
+
+
+Measure button release confidence. 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!sec@{sec}}
+\index{sec@{sec}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{sec}{sec}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t sec =0}\hypertarget{pulsefinaltest_8c_a56d5d17c309cbe57628e4da5ed97ff01}{}\label{pulsefinaltest_8c_a56d5d17c309cbe57628e4da5ed97ff01}
+
+
+second counter 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!sek@{sek}}
+\index{sek@{sek}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{sek}{sek}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t sek = 0}\hypertarget{pulsefinaltest_8c_a698eb33668e1a2ec731bce5c7a48e164}{}\label{pulsefinaltest_8c_a698eb33668e1a2ec731bce5c7a48e164}
+
+
+second counter for time display 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!srce@{srce}}
+\index{srce@{srce}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{srce}{srce}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char srce\mbox{[}8\mbox{]} =\{0x00, 0x0a, 0x15, 0x11, 0x11, 0x0a, 0x04, 0x00\}}\hypertarget{pulsefinaltest_8c_ad743e6af7544d81d8e0135c1947c13d1}{}\label{pulsefinaltest_8c_ad743e6af7544d81d8e0135c1947c13d1}
+
+
+heart sign string 
+
+\index{pulsefinaltest.\+c@{pulsefinaltest.\+c}!z@{z}}
+\index{z@{z}!pulsefinaltest.\+c@{pulsefinaltest.\+c}}
+\subsubsection[{\texorpdfstring{z}{z}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t z =0}\hypertarget{pulsefinaltest_8c_ab3539ae3820541b70d17c66cfc5a0e3f}{}\label{pulsefinaltest_8c_ab3539ae3820541b70d17c66cfc5a0e3f}

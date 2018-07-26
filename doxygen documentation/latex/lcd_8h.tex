@@ -1,0 +1,178 @@
+\hypertarget{lcd_8h}{}\section{C\+:/\+Users/\+John/\+Desktop/pulsefinaltest/pulsefinaltest/lcd.h File Reference}
+\label{lcd_8h}\index{C\+:/\+Users/\+John/\+Desktop/pulsefinaltest/pulsefinaltest/lcd.\+h@{C\+:/\+Users/\+John/\+Desktop/pulsefinaltest/pulsefinaltest/lcd.\+h}}
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$avr/pgmspace.\+h$>$}\\*
+\subsection*{Macros}
+\begin{Indent}{\bf Definitions for M\+CU Clock Frequency}\par
+{\em Adapt the M\+CU clock frequency in Hz to your target. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga3cad0f9b3c40159bd2fbd7f5e60f2fff}{X\+T\+AL}~7372800
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Definition for L\+CD controller type}\par
+{\em Use 0 for H\+D44780 controller, change to 1 for displays with K\+S0073 controller. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga63574b03f72a197aeee823aae95dc3b7}{L\+C\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+K\+S0073}~0
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Definitions for Display Size}\par
+{\em Change these definitions to adapt setting to your display }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga01212e90283511562039db786f65ba98}{L\+C\+D\+\_\+\+L\+I\+N\+ES}~2
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga684bb4392e384b7ae7c660d81dacb930}{L\+C\+D\+\_\+\+D\+I\+S\+P\+\_\+\+L\+E\+N\+G\+TH}~16
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae59a728d9dee9f12c817b29d38746ed9}{L\+C\+D\+\_\+\+L\+I\+N\+E\+\_\+\+L\+E\+N\+G\+TH}~0x40
+\item 
+\#define \hyperlink{group__pfleury__lcd_gabd056d70a1488ea2eb1aef87e248e234}{L\+C\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+I\+N\+E1}~0x00
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga7b317b21058ef031716ba040ef75430a}{L\+C\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+I\+N\+E2}~0x40
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae7cca16353048a062baeb3a52da55249}{L\+C\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+I\+N\+E3}~0x14
+\item 
+\#define \hyperlink{group__pfleury__lcd_gab1b73e05bdb5cc12cdff5a1cf6c4f2a2}{L\+C\+D\+\_\+\+S\+T\+A\+R\+T\+\_\+\+L\+I\+N\+E4}~0x54
+\item 
+\#define \hyperlink{group__pfleury__lcd_gadb35ff6cb242e48ba0545ea919ffc5d3}{L\+C\+D\+\_\+\+W\+R\+A\+P\+\_\+\+L\+I\+N\+ES}~0
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga659fcdf979f69bbd14f852f525f25e02}{L\+C\+D\+\_\+\+I\+O\+\_\+\+M\+O\+DE}~1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Definitions for 4-\/bit IO mode}\par
+{\em Change L\+C\+D\+\_\+\+P\+O\+RT if you want to use a different port for the L\+CD pins.
+
+The four L\+CD data lines and the three control lines RS, RW, E can be on the same port or on different ports. Change L\+C\+D\+\_\+\+R\+S\+\_\+\+P\+O\+RT, L\+C\+D\+\_\+\+R\+W\+\_\+\+P\+O\+RT, L\+C\+D\+\_\+\+E\+\_\+\+P\+O\+RT if you want the control lines on different ports.
+
+Normally the four data lines should be mapped to bit 0..3 on one port, but it is possible to connect these data lines in different order or even on different ports by adapting the L\+C\+D\+\_\+\+D\+A\+T\+Ax\+\_\+\+P\+O\+RT and L\+C\+D\+\_\+\+D\+A\+T\+Ax\+\_\+\+P\+IN definitions. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__lcd_gabcf42bd88b3c36193f301ca25b033875}{L\+C\+D\+\_\+\+P\+O\+RT}~P\+O\+R\+TB
+\item 
+\#define \hyperlink{group__pfleury__lcd_gafc0acd4774bcd311595732f5367e266b}{L\+C\+D\+\_\+\+D\+A\+T\+A0\+\_\+\+P\+O\+RT}~\hyperlink{group__pfleury__lcd_gabcf42bd88b3c36193f301ca25b033875}{L\+C\+D\+\_\+\+P\+O\+RT}
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga345af0248d5739bd8896d4f585618ca2}{L\+C\+D\+\_\+\+D\+A\+T\+A1\+\_\+\+P\+O\+RT}~\hyperlink{group__pfleury__lcd_gabcf42bd88b3c36193f301ca25b033875}{L\+C\+D\+\_\+\+P\+O\+RT}
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga4d5c48a3f2b9426c14bbca3150834a20}{L\+C\+D\+\_\+\+D\+A\+T\+A2\+\_\+\+P\+O\+RT}~\hyperlink{group__pfleury__lcd_gabcf42bd88b3c36193f301ca25b033875}{L\+C\+D\+\_\+\+P\+O\+RT}
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaec71b6692f2af7c9de32dbe85fcb51c2}{L\+C\+D\+\_\+\+D\+A\+T\+A3\+\_\+\+P\+O\+RT}~\hyperlink{group__pfleury__lcd_gabcf42bd88b3c36193f301ca25b033875}{L\+C\+D\+\_\+\+P\+O\+RT}
+\item 
+\#define \hyperlink{group__pfleury__lcd_gafe54d7d886b5c56bed0cf971febbb773}{L\+C\+D\+\_\+\+D\+A\+T\+A0\+\_\+\+P\+IN}~4
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga97fb520e7b83bb047ac5c9247de57049}{L\+C\+D\+\_\+\+D\+A\+T\+A1\+\_\+\+P\+IN}~5
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga7f3d53627337f6535cc8daa35876510a}{L\+C\+D\+\_\+\+D\+A\+T\+A2\+\_\+\+P\+IN}~6
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga54032ce0050853e181f879b69fec4370}{L\+C\+D\+\_\+\+D\+A\+T\+A3\+\_\+\+P\+IN}~7
+\item 
+\#define \hyperlink{group__pfleury__lcd_gac5be2a22727fd9ca349e1c9bcbfbcd47}{L\+C\+D\+\_\+\+R\+S\+\_\+\+P\+O\+RT}~P\+O\+R\+TD
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae5c0a0a5750f3aaea06083e3a4a31f5d}{L\+C\+D\+\_\+\+R\+S\+\_\+\+P\+IN}~5
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae8772bdf31db863b81805c837bdc2da2}{L\+C\+D\+\_\+\+R\+W\+\_\+\+P\+O\+RT}~P\+O\+R\+TD
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga3ac938dd5fc02a9a232df6605b5f6aa8}{L\+C\+D\+\_\+\+R\+W\+\_\+\+P\+IN}~6
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaf97f97ff3832d1289bbcb471090ea297}{L\+C\+D\+\_\+\+E\+\_\+\+P\+O\+RT}~P\+O\+R\+TD
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae644d776392a8d47899d9910c2b8feb6}{L\+C\+D\+\_\+\+E\+\_\+\+P\+IN}~7
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Definitions for L\+CD command instructions}\par
+{\em The constants define the various L\+CD controller instructions which can be passed to the function \hyperlink{group__pfleury__lcd_gaea9d14f02df06f948cb5a56776980826}{lcd\+\_\+command()}, see H\+D44780 data sheet for a complete description. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga459688213267d13ccfbeb2c9004988cb}{L\+C\+D\+\_\+\+C\+LR}~0      /$\ast$ D\+B0\+: clear display                  $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae0e309ccad89222eb3457f2da9f2bb8d}{L\+C\+D\+\_\+\+H\+O\+ME}~1      /$\ast$ D\+B1\+: return to home position        $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae5d757ddb6d94de8c82191b60b40e442}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+DE}~2      /$\ast$ D\+B2\+: set entry mode                 $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gada766266a0be0d0040fbf86e23b58aa6}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+I\+NC}~1      /$\ast$   D\+B1\+: 1=increment, 0=decrement     $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga14d0c7fda147e0dc8cdaa4a2629b3532}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+S\+H\+I\+FT}~0      /$\ast$   D\+B2\+: 1=display shift on           $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga47a809dfec086fdeca93dedc4fb83b44}{L\+C\+D\+\_\+\+ON}~3      /$\ast$ D\+B3\+: turn lcd/cursor on             $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae84f634b0a1661c4d5bbaafd9397732a}{L\+C\+D\+\_\+\+O\+N\+\_\+\+D\+I\+S\+P\+L\+AY}~2      /$\ast$   D\+B2\+: turn display on              $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga47638b5ebbaec9600a0ebf9a55caf802}{L\+C\+D\+\_\+\+O\+N\+\_\+\+C\+U\+R\+S\+OR}~1      /$\ast$   D\+B1\+: turn cursor on               $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga5d76592a978537acee615098ce4d80f5}{L\+C\+D\+\_\+\+O\+N\+\_\+\+B\+L\+I\+NK}~0      /$\ast$     D\+B0\+: blinking cursor ?          $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga3f4f758b80fcfa6c9e4db58e2515c78a}{L\+C\+D\+\_\+\+M\+O\+VE}~4      /$\ast$ D\+B4\+: move cursor/display            $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaaddc2afa9a02bfa748950f2c1e6a204d}{L\+C\+D\+\_\+\+M\+O\+V\+E\+\_\+\+D\+I\+SP}~3      /$\ast$   D\+B3\+: move display (0-\/$>$ cursor) ?  $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga97cdb19acf109ad52ab4994d2ad02cee}{L\+C\+D\+\_\+\+M\+O\+V\+E\+\_\+\+R\+I\+G\+HT}~2      /$\ast$   D\+B2\+: move right (0-\/$>$ left) ?      $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga50de1697f1da8ab075a6b4d7aeace64e}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON}~5      /$\ast$ D\+B5\+: function set                   $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga91d15d8e3008f6cb141406a8b5d0d3c0}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+8\+B\+IT}~4      /$\ast$   D\+B4\+: set 8\+B\+I\+T mode (0-\/$>$4\+B\+I\+T mode) $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga6c24806bed18d565917165caa3475463}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+2\+L\+I\+N\+ES}~3      /$\ast$   D\+B3\+: two lines (0-\/$>$one line)      $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga48de81358277fe4f2810c2b82f90397e}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+10\+D\+O\+TS}~2      /$\ast$   D\+B2\+: 5x10 font (0-\/$>$5x7 font)      $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga3b38de74c362be1781fef1136aa9684c}{L\+C\+D\+\_\+\+C\+G\+R\+AM}~6      /$\ast$ D\+B6\+: set CG R\+AM address             $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gae54acf3ccc45b7d6be334a03627740c6}{L\+C\+D\+\_\+\+D\+D\+R\+AM}~7      /$\ast$ D\+B7\+: set DD R\+AM address             $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gac8dd1658e235f174d1cabae5c438943d}{L\+C\+D\+\_\+\+B\+U\+SY}~7      /$\ast$ D\+B7\+: L\+CD is busy                    $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaad56f8e07634e85663f56888ae97089c}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+D\+EC}~0x04   /$\ast$ display shift off, dec cursor move dir $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga1c62932f252c6262cbef728add9696e4}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+D\+E\+C\+\_\+\+S\+H\+I\+FT}~0x05   /$\ast$ display shift on,  dec cursor move dir $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gad27ddc4b8d03594662c8757f946dde28}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+I\+N\+C\+\_\+}~0x06   /$\ast$ display shift off, inc cursor move dir $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gafabd0215cc6ae5539dc638dbec44a506}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+H\+I\+FT}~0x07   /$\ast$ display shift on,  inc cursor move dir $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaa2966175115943883f51e9c90478540c}{L\+C\+D\+\_\+\+D\+I\+S\+P\+\_\+\+O\+FF}~0x08   /$\ast$ display off                            $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga5163a96b133868975c0738e180b30cb8}{L\+C\+D\+\_\+\+D\+I\+S\+P\+\_\+\+ON}~0x0\+C   /$\ast$ display on, cursor off                 $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga470cef85de53e37356b22c66a357a764}{L\+C\+D\+\_\+\+D\+I\+S\+P\+\_\+\+O\+N\+\_\+\+B\+L\+I\+NK}~0x0\+D   /$\ast$ display on, cursor off, blink char     $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaf56b6d6bdb6fa48b26106dee5f74ae1f}{L\+C\+D\+\_\+\+D\+I\+S\+P\+\_\+\+O\+N\+\_\+\+C\+U\+R\+S\+OR}~0x0\+E   /$\ast$ display on, cursor on                  $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gac1984ed0db15c6991d34c184fdca5dc6}{L\+C\+D\+\_\+\+D\+I\+S\+P\+\_\+\+O\+N\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+B\+L\+I\+NK}~0x0\+F   /$\ast$ display on, cursor on, blink char      $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gac2f0ddce1daaa1bf1a016270a89a264b}{L\+C\+D\+\_\+\+M\+O\+V\+E\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+L\+E\+FT}~0x10   /$\ast$ move cursor left  (decrement)          $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga0ad58e39e053e97d34527fcbe936899b}{L\+C\+D\+\_\+\+M\+O\+V\+E\+\_\+\+C\+U\+R\+S\+O\+R\+\_\+\+R\+I\+G\+HT}~0x14   /$\ast$ move cursor right (increment)          $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gab3c34ff1eee238bbe9c677215219fb8e}{L\+C\+D\+\_\+\+M\+O\+V\+E\+\_\+\+D\+I\+S\+P\+\_\+\+L\+E\+FT}~0x18   /$\ast$ shift display left                     $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga9a90bb926f5ba59378af81fe8e246ffb}{L\+C\+D\+\_\+\+M\+O\+V\+E\+\_\+\+D\+I\+S\+P\+\_\+\+R\+I\+G\+HT}~0x1\+C   /$\ast$ shift display right                    $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaff4e5baa36a0322eb97557dcb18cd96e}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+4\+B\+I\+T\+\_\+1\+L\+I\+NE}~0x20   /$\ast$ 4-\/bit interface, single line, 5x7 dots $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gab35032ab368a8bc90798e0c547fb24c2}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+4\+B\+I\+T\+\_\+2\+L\+I\+N\+ES}~0x28   /$\ast$ 4-\/bit interface, dual line,   5x7 dots $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_gaa8aeee098cb4c84ec420e00d054abcce}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+8\+B\+I\+T\+\_\+1\+L\+I\+NE}~0x30   /$\ast$ 8-\/bit interface, single line, 5x7 dots $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga160a214f47869f8f98ad5add3a7568db}{L\+C\+D\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+8\+B\+I\+T\+\_\+2\+L\+I\+N\+ES}~0x38   /$\ast$ 8-\/bit interface, dual line,   5x7 dots $\ast$/
+\item 
+\#define \hyperlink{group__pfleury__lcd_ga1849e2087d3034a3fffa67444beed109}{L\+C\+D\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+F\+A\+U\+LT}~((1$<$$<$\hyperlink{group__pfleury__lcd_gae5d757ddb6d94de8c82191b60b40e442}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+M\+O\+DE}) $\vert$ (1$<$$<$\hyperlink{group__pfleury__lcd_gada766266a0be0d0040fbf86e23b58aa6}{L\+C\+D\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+I\+NC}) )
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__lcd_gad2895d544df6664f2b5500f2e7991911}{lcd\+\_\+puts\+\_\+P}(\+\_\+\+\_\+s)              ~\hyperlink{group__pfleury__lcd_ga9022a24a56a9b15681f62eb6ba77e5de}{lcd\+\_\+puts\+\_\+p}(P\+S\+TR(\+\_\+\+\_\+s))
+\begin{DoxyCompactList}\small\item\em macros for automatically storing string constant in program memory \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_ga9af28b2779326b63ff4356e2b1828984}{lcd\+\_\+init} (uint8\+\_\+t disp\+Attr)
+\begin{DoxyCompactList}\small\item\em Initialize display and select type of cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_gaf8da853dba4b9d5f2aea4e294444e14d}{lcd\+\_\+clrscr} (void)
+\begin{DoxyCompactList}\small\item\em Clear display and set cursor to home position. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_ga3aabf730aa4e0393bb5c959583c00a8e}{lcd\+\_\+home} (void)
+\begin{DoxyCompactList}\small\item\em Set cursor to home position. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_gadbf47a5efdf02367ded1ebf8f9edb5fe}{lcd\+\_\+gotoxy} (uint8\+\_\+t x, uint8\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Set cursor to specified position. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_gafa7e36b95c43d603f510273ad077cbbe}{lcd\+\_\+putc} (char c)
+\begin{DoxyCompactList}\small\item\em Display character at current cursor position. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_ga8ffdfcac7638368ff04364c14984266e}{lcd\+\_\+puts} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Display string without auto linefeed. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_ga9022a24a56a9b15681f62eb6ba77e5de}{lcd\+\_\+puts\+\_\+p} (const char $\ast$progmem\+\_\+s)
+\begin{DoxyCompactList}\small\item\em Display string from program memory without auto linefeed. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_gaea9d14f02df06f948cb5a56776980826}{lcd\+\_\+command} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Send L\+CD controller instruction command. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__lcd_gad0729d2cba627825a089ca1fff12ba29}{lcd\+\_\+data} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Send data byte to L\+CD controller. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,991 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__pfleury__lcd" kind="group">
+    <compoundname>pfleury_lcd</compoundname>
+    <title>LCD library</title>
+      <sectiondef kind="user-defined">
+      <header>Definitions for MCU Clock Frequency</header>
+      <description><para>Adapt the MCU clock frequency in Hz to your target. </para></description>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga3cad0f9b3c40159bd2fbd7f5e60f2fff" prot="public" static="no">
+        <name>XTAL</name>
+        <initializer>7372800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>clock frequency in Hz, used to calculate delay timer </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="47" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Definition for LCD controller type</header>
+      <description><para>Use 0 for HD44780 controller, change to 1 for displays with KS0073 controller. </para></description>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga63574b03f72a197aeee823aae95dc3b7" prot="public" static="no">
+        <name>LCD_CONTROLLER_KS0073</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use 0 for HD44780 controller, 1 for KS0073 controller </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="54" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Definitions for Display Size</header>
+      <description><para>Change these definitions to adapt setting to your display </para></description>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga01212e90283511562039db786f65ba98" prot="public" static="no">
+        <name>LCD_LINES</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of visible lines of the display </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="60" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga684bb4392e384b7ae7c660d81dacb930" prot="public" static="no">
+        <name>LCD_DISP_LENGTH</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>visibles characters per line of the display </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="61" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae59a728d9dee9f12c817b29d38746ed9" prot="public" static="no">
+        <name>LCD_LINE_LENGTH</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>internal line length of the display </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="62" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gabd056d70a1488ea2eb1aef87e248e234" prot="public" static="no">
+        <name>LCD_START_LINE1</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DDRAM address of first char of line 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="63" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga7b317b21058ef031716ba040ef75430a" prot="public" static="no">
+        <name>LCD_START_LINE2</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DDRAM address of first char of line 2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="64" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae7cca16353048a062baeb3a52da55249" prot="public" static="no">
+        <name>LCD_START_LINE3</name>
+        <initializer>0x14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DDRAM address of first char of line 3 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="65" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gab1b73e05bdb5cc12cdff5a1cf6c4f2a2" prot="public" static="no">
+        <name>LCD_START_LINE4</name>
+        <initializer>0x54</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>DDRAM address of first char of line 4 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="66" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gadb35ff6cb242e48ba0545ea919ffc5d3" prot="public" static="no">
+        <name>LCD_WRAP_LINES</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>0: no wrap, 1: wrap at end of visibile line </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="67" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga659fcdf979f69bbd14f852f525f25e02" prot="public" static="no">
+        <name>LCD_IO_MODE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>0: memory mapped mode, 1: IO port mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="70" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Definitions for 4-bit IO mode</header>
+      <description><para>Change LCD_PORT if you want to use a different port for the LCD pins.</para><para>The four LCD data lines and the three control lines RS, RW, E can be on the same port or on different ports. Change LCD_RS_PORT, LCD_RW_PORT, LCD_E_PORT if you want the control lines on different ports.</para><para>Normally the four data lines should be mapped to bit 0..3 on one port, but it is possible to connect these data lines in different order or even on different ports by adapting the LCD_DATAx_PORT and LCD_DATAx_PIN definitions. </para></description>
+      <memberdef kind="define" id="group__pfleury__lcd_1gabcf42bd88b3c36193f301ca25b033875" prot="public" static="no">
+        <name>LCD_PORT</name>
+        <initializer>PORTB</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for the LCD lines </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="86" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gafc0acd4774bcd311595732f5367e266b" prot="public" static="no">
+        <name>LCD_DATA0_PORT</name>
+        <initializer><ref refid="group__pfleury__lcd_1gabcf42bd88b3c36193f301ca25b033875" kindref="member">LCD_PORT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for 4bit data bit 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="87" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga345af0248d5739bd8896d4f585618ca2" prot="public" static="no">
+        <name>LCD_DATA1_PORT</name>
+        <initializer><ref refid="group__pfleury__lcd_1gabcf42bd88b3c36193f301ca25b033875" kindref="member">LCD_PORT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for 4bit data bit 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="88" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga4d5c48a3f2b9426c14bbca3150834a20" prot="public" static="no">
+        <name>LCD_DATA2_PORT</name>
+        <initializer><ref refid="group__pfleury__lcd_1gabcf42bd88b3c36193f301ca25b033875" kindref="member">LCD_PORT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for 4bit data bit 2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="89" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaec71b6692f2af7c9de32dbe85fcb51c2" prot="public" static="no">
+        <name>LCD_DATA3_PORT</name>
+        <initializer><ref refid="group__pfleury__lcd_1gabcf42bd88b3c36193f301ca25b033875" kindref="member">LCD_PORT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for 4bit data bit 3 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="90" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gafe54d7d886b5c56bed0cf971febbb773" prot="public" static="no">
+        <name>LCD_DATA0_PIN</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pin for 4bit data bit 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="91" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga97fb520e7b83bb047ac5c9247de57049" prot="public" static="no">
+        <name>LCD_DATA1_PIN</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pin for 4bit data bit 1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="92" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga7f3d53627337f6535cc8daa35876510a" prot="public" static="no">
+        <name>LCD_DATA2_PIN</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pin for 4bit data bit 2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="93" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga54032ce0050853e181f879b69fec4370" prot="public" static="no">
+        <name>LCD_DATA3_PIN</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pin for 4bit data bit 3 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="94" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gac5be2a22727fd9ca349e1c9bcbfbcd47" prot="public" static="no">
+        <name>LCD_RS_PORT</name>
+        <initializer>PORTD</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for RS line </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="95" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae5c0a0a5750f3aaea06083e3a4a31f5d" prot="public" static="no">
+        <name>LCD_RS_PIN</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pin for RS line </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="96" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae8772bdf31db863b81805c837bdc2da2" prot="public" static="no">
+        <name>LCD_RW_PORT</name>
+        <initializer>PORTD</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for RW line </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="97" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga3ac938dd5fc02a9a232df6605b5f6aa8" prot="public" static="no">
+        <name>LCD_RW_PIN</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pin for RW line </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="98" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaf97f97ff3832d1289bbcb471090ea297" prot="public" static="no">
+        <name>LCD_E_PORT</name>
+        <initializer>PORTD</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>port for Enable line </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="99" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae644d776392a8d47899d9910c2b8feb6" prot="public" static="no">
+        <name>LCD_E_PIN</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>pin for Enable line </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="100" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Definitions for LCD command instructions</header>
+      <description><para>The constants define the various LCD controller instructions which can be passed to the function <ref refid="group__pfleury__lcd_1gaea9d14f02df06f948cb5a56776980826" kindref="member">lcd_command()</ref>, see HD44780 data sheet for a complete description. </para></description>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga459688213267d13ccfbeb2c9004988cb" prot="public" static="no">
+        <name>LCD_CLR</name>
+        <initializer>0      /* DB0: clear display                  */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="124" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae0e309ccad89222eb3457f2da9f2bb8d" prot="public" static="no">
+        <name>LCD_HOME</name>
+        <initializer>1      /* DB1: return to home position        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="125" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae5d757ddb6d94de8c82191b60b40e442" prot="public" static="no">
+        <name>LCD_ENTRY_MODE</name>
+        <initializer>2      /* DB2: set entry mode                 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="126" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gada766266a0be0d0040fbf86e23b58aa6" prot="public" static="no">
+        <name>LCD_ENTRY_INC</name>
+        <initializer>1      /*   DB1: 1=increment, 0=decrement     */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="127" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga14d0c7fda147e0dc8cdaa4a2629b3532" prot="public" static="no">
+        <name>LCD_ENTRY_SHIFT</name>
+        <initializer>0      /*   DB2: 1=display shift on           */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="128" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga47a809dfec086fdeca93dedc4fb83b44" prot="public" static="no">
+        <name>LCD_ON</name>
+        <initializer>3      /* DB3: turn lcd/cursor on             */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="129" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae84f634b0a1661c4d5bbaafd9397732a" prot="public" static="no">
+        <name>LCD_ON_DISPLAY</name>
+        <initializer>2      /*   DB2: turn display on              */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="130" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga47638b5ebbaec9600a0ebf9a55caf802" prot="public" static="no">
+        <name>LCD_ON_CURSOR</name>
+        <initializer>1      /*   DB1: turn cursor on               */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="131" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga5d76592a978537acee615098ce4d80f5" prot="public" static="no">
+        <name>LCD_ON_BLINK</name>
+        <initializer>0      /*     DB0: blinking cursor ?          */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="132" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga3f4f758b80fcfa6c9e4db58e2515c78a" prot="public" static="no">
+        <name>LCD_MOVE</name>
+        <initializer>4      /* DB4: move cursor/display            */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="133" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaaddc2afa9a02bfa748950f2c1e6a204d" prot="public" static="no">
+        <name>LCD_MOVE_DISP</name>
+        <initializer>3      /*   DB3: move display (0-&gt; cursor) ?  */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="134" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga97cdb19acf109ad52ab4994d2ad02cee" prot="public" static="no">
+        <name>LCD_MOVE_RIGHT</name>
+        <initializer>2      /*   DB2: move right (0-&gt; left) ?      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="135" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga50de1697f1da8ab075a6b4d7aeace64e" prot="public" static="no">
+        <name>LCD_FUNCTION</name>
+        <initializer>5      /* DB5: function set                   */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="136" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga91d15d8e3008f6cb141406a8b5d0d3c0" prot="public" static="no">
+        <name>LCD_FUNCTION_8BIT</name>
+        <initializer>4      /*   DB4: set 8BIT mode (0-&gt;4BIT mode) */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="137" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga6c24806bed18d565917165caa3475463" prot="public" static="no">
+        <name>LCD_FUNCTION_2LINES</name>
+        <initializer>3      /*   DB3: two lines (0-&gt;one line)      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="138" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga48de81358277fe4f2810c2b82f90397e" prot="public" static="no">
+        <name>LCD_FUNCTION_10DOTS</name>
+        <initializer>2      /*   DB2: 5x10 font (0-&gt;5x7 font)      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="139" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga3b38de74c362be1781fef1136aa9684c" prot="public" static="no">
+        <name>LCD_CGRAM</name>
+        <initializer>6      /* DB6: set CG RAM address             */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="140" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gae54acf3ccc45b7d6be334a03627740c6" prot="public" static="no">
+        <name>LCD_DDRAM</name>
+        <initializer>7      /* DB7: set DD RAM address             */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="141" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gac8dd1658e235f174d1cabae5c438943d" prot="public" static="no">
+        <name>LCD_BUSY</name>
+        <initializer>7      /* DB7: LCD is busy                    */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="142" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaad56f8e07634e85663f56888ae97089c" prot="public" static="no">
+        <name>LCD_ENTRY_DEC</name>
+        <initializer>0x04   /* display shift off, dec cursor move dir */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="145" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga1c62932f252c6262cbef728add9696e4" prot="public" static="no">
+        <name>LCD_ENTRY_DEC_SHIFT</name>
+        <initializer>0x05   /* display shift on,  dec cursor move dir */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="146" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gad27ddc4b8d03594662c8757f946dde28" prot="public" static="no">
+        <name>LCD_ENTRY_INC_</name>
+        <initializer>0x06   /* display shift off, inc cursor move dir */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="147" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gafabd0215cc6ae5539dc638dbec44a506" prot="public" static="no">
+        <name>LCD_ENTRY_INC_SHIFT</name>
+        <initializer>0x07   /* display shift on,  inc cursor move dir */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="148" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaa2966175115943883f51e9c90478540c" prot="public" static="no">
+        <name>LCD_DISP_OFF</name>
+        <initializer>0x08   /* display off                            */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="151" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga5163a96b133868975c0738e180b30cb8" prot="public" static="no">
+        <name>LCD_DISP_ON</name>
+        <initializer>0x0C   /* display on, cursor off                 */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="152" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga470cef85de53e37356b22c66a357a764" prot="public" static="no">
+        <name>LCD_DISP_ON_BLINK</name>
+        <initializer>0x0D   /* display on, cursor off, blink char     */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="153" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaf56b6d6bdb6fa48b26106dee5f74ae1f" prot="public" static="no">
+        <name>LCD_DISP_ON_CURSOR</name>
+        <initializer>0x0E   /* display on, cursor on                  */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="154" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gac1984ed0db15c6991d34c184fdca5dc6" prot="public" static="no">
+        <name>LCD_DISP_ON_CURSOR_BLINK</name>
+        <initializer>0x0F   /* display on, cursor on, blink char      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="155" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gac2f0ddce1daaa1bf1a016270a89a264b" prot="public" static="no">
+        <name>LCD_MOVE_CURSOR_LEFT</name>
+        <initializer>0x10   /* move cursor left  (decrement)          */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="158" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga0ad58e39e053e97d34527fcbe936899b" prot="public" static="no">
+        <name>LCD_MOVE_CURSOR_RIGHT</name>
+        <initializer>0x14   /* move cursor right (increment)          */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="159" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gab3c34ff1eee238bbe9c677215219fb8e" prot="public" static="no">
+        <name>LCD_MOVE_DISP_LEFT</name>
+        <initializer>0x18   /* shift display left                     */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="160" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga9a90bb926f5ba59378af81fe8e246ffb" prot="public" static="no">
+        <name>LCD_MOVE_DISP_RIGHT</name>
+        <initializer>0x1C   /* shift display right                    */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="161" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaff4e5baa36a0322eb97557dcb18cd96e" prot="public" static="no">
+        <name>LCD_FUNCTION_4BIT_1LINE</name>
+        <initializer>0x20   /* 4-bit interface, single line, 5x7 dots */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="164" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gab35032ab368a8bc90798e0c547fb24c2" prot="public" static="no">
+        <name>LCD_FUNCTION_4BIT_2LINES</name>
+        <initializer>0x28   /* 4-bit interface, dual line,   5x7 dots */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="165" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gaa8aeee098cb4c84ec420e00d054abcce" prot="public" static="no">
+        <name>LCD_FUNCTION_8BIT_1LINE</name>
+        <initializer>0x30   /* 8-bit interface, single line, 5x7 dots */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="166" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga160a214f47869f8f98ad5add3a7568db" prot="public" static="no">
+        <name>LCD_FUNCTION_8BIT_2LINES</name>
+        <initializer>0x38   /* 8-bit interface, dual line,   5x7 dots */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="167" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1ga1849e2087d3034a3fffa67444beed109" prot="public" static="no">
+        <name>LCD_MODE_DEFAULT</name>
+        <initializer>((1&lt;&lt;<ref refid="group__pfleury__lcd_1gae5d757ddb6d94de8c82191b60b40e442" kindref="member">LCD_ENTRY_MODE</ref>) | (1&lt;&lt;<ref refid="group__pfleury__lcd_1gada766266a0be0d0040fbf86e23b58aa6" kindref="member">LCD_ENTRY_INC</ref>) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="170" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Functions</header>
+      <memberdef kind="function" id="group__pfleury__lcd_1ga9af28b2779326b63ff4356e2b1828984" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_init</definition>
+        <argsstring>(uint8_t dispAttr)</argsstring>
+        <name>lcd_init</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>dispAttr</declname>
+        </param>
+        <briefdescription>
+<para>Initialize display and select type of cursor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dispAttr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><bold>LCD_DISP_OFF</bold> display off<linebreak/>
+ <bold>LCD_DISP_ON</bold> display on, cursor off<linebreak/>
+ <bold>LCD_DISP_ON_CURSOR</bold> display on, cursor on<linebreak/>
+ <bold>LCD_DISP_ON_CURSOR_BLINK</bold> display on, cursor on flashing </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="187" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="521" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1gaf8da853dba4b9d5f2aea4e294444e14d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_clrscr</definition>
+        <argsstring>(void)</argsstring>
+        <name>lcd_clrscr</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Clear display and set cursor to home position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="195" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="417" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1ga3aabf730aa4e0393bb5c959583c00a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_home</definition>
+        <argsstring>(void)</argsstring>
+        <name>lcd_home</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set cursor to home position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="203" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="426" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1gadbf47a5efdf02367ded1ebf8f9edb5fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_gotoxy</definition>
+        <argsstring>(uint8_t x, uint8_t y)</argsstring>
+        <name>lcd_gotoxy</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Set cursor to specified position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>horizontal position<linebreak/>
+ (0: left most position) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vertical position<linebreak/>
+ (0: first line) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="213" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="381" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1gafa7e36b95c43d603f510273ad077cbbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_putc</definition>
+        <argsstring>(char c)</argsstring>
+        <name>lcd_putc</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Display character at current cursor position. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>character to be displayed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="221" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="437" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1ga8ffdfcac7638368ff04364c14984266e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_puts</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>lcd_puts</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Display string without auto linefeed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to be displayed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="229" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="484" bodyend="493"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1ga9022a24a56a9b15681f62eb6ba77e5de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_puts_p</definition>
+        <argsstring>(const char *progmem_s)</argsstring>
+        <name>lcd_puts_p</name>
+        <param>
+          <type>const char *</type>
+          <declname>progmem_s</declname>
+        </param>
+        <briefdescription>
+<para>Display string from program memory without auto linefeed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string from program memory be be displayed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__pfleury__lcd_1gad2895d544df6664f2b5500f2e7991911" kindref="member">lcd_puts_P</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="238" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="501" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1gaea9d14f02df06f948cb5a56776980826" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_command</definition>
+        <argsstring>(uint8_t cmd)</argsstring>
+        <name>lcd_command</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+<para>Send LCD controller instruction command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>instruction to send to LCD controller, see HD44780 data sheet </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="246" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="355" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pfleury__lcd_1gad0729d2cba627825a089ca1fff12ba29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_data</definition>
+        <argsstring>(uint8_t data)</argsstring>
+        <name>lcd_data</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Send data byte to LCD controller. </para>        </briefdescription>
+        <detaileddescription>
+<para>Similar to <ref refid="group__pfleury__lcd_1gafa7e36b95c43d603f510273ad077cbbe" kindref="member">lcd_putc()</ref>, but without interpreting LF <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte to send to LCD controller, see HD44780 data sheet </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>none </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="256" column="1" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.c" bodystart="367" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="define" id="group__pfleury__lcd_1gad2895d544df6664f2b5500f2e7991911" prot="public" static="no">
+        <name>lcd_puts_P</name>
+        <param><defname>__s</defname></param>
+        <initializer><ref refid="group__pfleury__lcd_1ga9022a24a56a9b15681f62eb6ba77e5de" kindref="member">lcd_puts_p</ref>(PSTR(__s))</initializer>
+        <briefdescription>
+<para>macros for automatically storing string constant in program memory </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" line="262" column="9" bodyfile="C:/Users/John/Desktop/pulsefinaltest/pulsefinaltest/lcd.h" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Basic routines for interfacing a HD44780U-based text LCD display. </para>    </briefdescription>
+    <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;lcd.h&gt;<sp/></highlight></codeline>
+</programlisting></para><para>Originally based on Volker Oth&apos;s LCD library, changed <ref refid="group__pfleury__lcd_1ga9af28b2779326b63ff4356e2b1828984" kindref="member">lcd_init()</ref>, added additional constants for <ref refid="group__pfleury__lcd_1gaea9d14f02df06f948cb5a56776980826" kindref="member">lcd_command()</ref>, added 4-bit I/O mode, improved and optimized code.</para><para>Library can be operated in memory mapped mode (LCD_IO_MODE=0) or in 4-bit IO port mode (LCD_IO_MODE=1). 8-bit IO port mode not supported.</para><para>Memory mapped mode compatible with Kanda STK200, but supports also generation of R/W signal through A8 address line.</para><para><simplesect kind="author"><para>Peter Fleury <ulink url="mailto:pfleury@gmx.ch">pfleury@gmx.ch</ulink> <ulink url="http://jump.to/fleury">http://jump.to/fleury</ulink></para></simplesect>
+<simplesect kind="see"><para>The chapter <ulink url="http://homepage.sunrise.ch/mysunrise/peterfleury/avr-lcd44780.html">Interfacing a HD44780 Based LCD to an AVR</ulink> on my home page. </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>
